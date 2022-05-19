@@ -1,9 +1,13 @@
 # Surfs Up
 
+![Surf Shop](https://blondetobronze.com/wp-content/uploads/2017/07/IMG_2983.jpg)
+
 ## Project Overview
 The goal is to run a business analysis for surf/shake shop investment in Hawaii. Due to a similar previous failed investment caused by inclement weather, the client wants to ensure the temperature sustainable during the June and December months.
 
 ### Resources
+
+SQLAlchemy, SQLite, Jupyter Notebook, and VSCode were used.
 
 
 
@@ -26,6 +30,16 @@ The goal is to run a business analysis for surf/shake shop investment in Hawaii.
 June
 
 ![June](Resources/summary.png)
+
+### Code
+
+    # 2. Write a query that filters the Measurement table to retrieve the temperatures for the month of June. 
+    
+    session.query(Measurement.date, Measurement.tobs).filter(extract('month',Measurement.date)==6).all()
+    
+    # 6. Write a query that filters the Measurement table to retrieve the temperatures for the month of December.
+    
+    session.query(Measurement.date, Measurement.tobs).filter(extract('month',Measurement.date)==12).all()
 
 ## Summary
 
